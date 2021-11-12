@@ -1,7 +1,7 @@
 package money.heist.repositories;
 
 import money.heist.model.Heist;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface HeistRepository extends CrudRepository<Heist, Long> {
+public interface HeistRepository extends JpaRepository<Heist, Long> {
 }

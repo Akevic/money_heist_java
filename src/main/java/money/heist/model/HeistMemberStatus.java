@@ -1,6 +1,6 @@
 package money.heist.model;
 
-public enum Status {
+public enum HeistMemberStatus {
   AVAILABLE,
   EXPIRED,
   INCARCERATED,

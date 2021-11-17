@@ -9,19 +9,18 @@ public class HeistMember {
   private String email;
   private String skills;
   private String mainSkill;
-  private Status status;
-
+  private HeistMemberStatus heistMemberStatus;
   private Long id;
 
   public HeistMember() {}
 
-  public HeistMember(String name, Sex sex, String email, String skills, String mainSkill, Status status) {
+  public HeistMember(String name, Sex sex, String email, String skills, String mainSkill, HeistMemberStatus heistMemberStatus) {
     this.name = name;
     this.sex = sex;
     this.email = email;
     this.skills = skills;
     this.mainSkill = mainSkill;
-    this.status = status;
+    this.heistMemberStatus = heistMemberStatus;
   }
 
   public String getName() {
@@ -66,12 +65,12 @@ public class HeistMember {
   }
 
   @Enumerated(EnumType.STRING)
-  public Status getStatus() {
-    return status;
+  public HeistMemberStatus getStatus() {
+    return heistMemberStatus;
   }
 
-  public void setStatus(Status status) {
-    this.status = status;
+  public void setStatus(HeistMemberStatus heistMemberStatus) {
+    this.heistMemberStatus = heistMemberStatus;
   }
 
   public void setId(Long id) {

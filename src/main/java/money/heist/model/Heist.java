@@ -1,9 +1,6 @@
 package money.heist.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Heist {
@@ -12,16 +9,27 @@ public class Heist {
   private String startTime;
   private String endTime;
   private String skills;
+  private HeistStatus status;
   private Long id;
 
   public Heist() {}
 
-  public Heist(String name, String location, String startTime, String endTime, String skills) {
+  public Heist(String name, String location, String startTime, String endTime, String skills, HeistStatus status) {
     this.name = name;
     this.location = location;
     this.startTime = startTime;
     this.endTime = endTime;
     this.skills = skills;
+    this.status = status;
+  }
+
+  @Enumerated(EnumType.STRING)
+  public HeistStatus getStatus() {
+    return status;
+  }
+
+  public void setStatus(HeistStatus status) {
+    this.status = status;
   }
 
   public String getName() {

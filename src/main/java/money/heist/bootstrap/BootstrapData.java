@@ -3,7 +3,7 @@ package money.heist.bootstrap;
 import money.heist.model.Heist;
 import money.heist.model.HeistMember;
 import money.heist.model.Sex;
-import money.heist.model.Status;
+import money.heist.model.HeistMemberStatus;
 import money.heist.repositories.HeistMemberRepository;
 import money.heist.repositories.HeistRepository;
 import org.springframework.boot.CommandLineRunner;
@@ -29,7 +29,7 @@ public class BootstrapData implements CommandLineRunner {
     eric.setSex(Sex.M);
     eric.setSkills("Driving, Lock-picking");
     eric.setMainSkill("Driving");
-    eric.setStatus(Status.AVAILABLE);
+    eric.setStatus(HeistMemberStatus.AVAILABLE);
 
     heistMemberRepository.save(eric);
 

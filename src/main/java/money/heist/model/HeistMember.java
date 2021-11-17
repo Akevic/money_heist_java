@@ -1,23 +1,21 @@
 package money.heist.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class HeistMember {
   private String name;
-  private String sex;
+  private Sex sex;
   private String email;
   private String skills;
   private String mainSkill;
-  private String status;
+  private Status status;
+
   private Long id;
 
   public HeistMember() {}
 
-  public HeistMember(String name, String sex, String email, String skills, String mainSkill, String status) {
+  public HeistMember(String name, Sex sex, String email, String skills, String mainSkill, Status status) {
     this.name = name;
     this.sex = sex;
     this.email = email;
@@ -34,11 +32,12 @@ public class HeistMember {
     this.name = name;
   }
 
-  public String getSex() {
+  @Enumerated(EnumType.STRING)
+  public Sex getSex() {
     return sex;
   }
 
-  public void setSex(String sex) {
+  public void setSex(Sex sex) {
     this.sex = sex;
   }
 
@@ -66,11 +65,12 @@ public class HeistMember {
     this.mainSkill = mainSkill;
   }
 
-  public String getStatus() {
+  @Enumerated(EnumType.STRING)
+  public Status getStatus() {
     return status;
   }
 
-  public void setStatus(String status) {
+  public void setStatus(Status status) {
     this.status = status;
   }
 

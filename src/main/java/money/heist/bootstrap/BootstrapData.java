@@ -2,6 +2,8 @@ package money.heist.bootstrap;
 
 import money.heist.model.Heist;
 import money.heist.model.HeistMember;
+import money.heist.model.Sex;
+import money.heist.model.Status;
 import money.heist.repositories.HeistMemberRepository;
 import money.heist.repositories.HeistRepository;
 import org.springframework.boot.CommandLineRunner;
@@ -18,16 +20,16 @@ public class BootstrapData implements CommandLineRunner {
   }
 
   @Override
-  public void run(String... args) throws Exception {
+  public void run(String... args) {
     System.out.println("Started bootstrap");
 
     HeistMember eric = new HeistMember();
     eric.setName("Eric");
     eric.setEmail("eric@email.com");
-    eric.setSex("M");
+    eric.setSex(Sex.M);
     eric.setSkills("Driving, Lock-picking");
     eric.setMainSkill("Driving");
-    eric.setStatus("Available");
+    eric.setStatus(Status.AVAILABLE);
 
     heistMemberRepository.save(eric);
 
